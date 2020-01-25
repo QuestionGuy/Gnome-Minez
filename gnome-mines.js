@@ -18,10 +18,10 @@ var MineboardData = {
         return p.add(0x28).readU32();
     },
     get_board_size_y: function(p) {
-        return p.add(0x20).readU32();
+        return p.add(0x24).readU32();
     },
     get_board_size_x: function(p) {
-        return p.add(0x24).readU32()
+        return p.add(0x20).readU32()
     },
     has_bomb: function(p, x, y) {
         console.log('has_bomb', p, x, y);
@@ -52,7 +52,7 @@ function get_mines_string(mineboard_ptr){
             }
         }
 
-        board_string += board_size_x * '-' + '\n';
+        board_string += '\n';
     }
 
     return board_string;
